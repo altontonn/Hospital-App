@@ -7,16 +7,7 @@ readfile("../index.html");
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     $query = "SELECT * FROM `caregiver` WHERE `id`= '".$_SESSION["id"]."'";
     $result = mysqli_query($connect, $query);
-
-//EDIT THIS WHILE to be a conditional check if you have results and output the variable. 
-$row = mysqli_fetch_array ($result);
-    // $rowcount=mysqli_num_rows($result);
-
-    // if($rowcount > 0){
-    // //echo or output user information like the username from your mysql result set.
-    // echo $_SESSION['Firstname'];
-    // }
-
+    $row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
@@ -48,33 +39,33 @@ $row = mysqli_fetch_array ($result);
                     </div>
                     <div class="form-group p-3">
                         <label for="email">Caregiver Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $row['Email'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="pwd">Caregiver Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="<?php echo $row['Password'] ?>">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group p-3">
                         <label for="dob">Caregiver Date of Birth:</label>
-                        <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob">
+                        <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="Gender">Caregiver Gender:</label><br>
-                        <input type="gender" class="form-control" id="gender" placeholder="Enter status" name="gender">
+                        <input type="gender" class="form-control" id="gender" placeholder="Enter status" name="gender" value="<?php echo $row['Gender'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="status">Caregiver Status:</label>
-                        <input type="status" class="form-control" id="status" placeholder="Enter status" name="status">
+                        <input type="status" class="form-control" id="status" placeholder="Enter status" name="status" value="<?php echo $row['Status'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="phone">Caregiver Phone:</label>
-                        <input type="phone" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+                        <input type="phone" class="form-control" id="phone" placeholder="Enter Phone" name="phone" value="<?php echo $row['Phone'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="address">Caregiver Address:</label>
-                        <input type="address" class="form-control" id="address" placeholder="Enter address" name="address">
+                        <input type="address" class="form-control" id="address" placeholder="Enter address" name="address" value="<?php echo $row['Address'] ?>">
                     </div>
                 </div>
             </div>

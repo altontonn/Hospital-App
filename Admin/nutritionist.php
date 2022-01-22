@@ -11,8 +11,8 @@ include('../connect.php');
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
-                        <a href="../home.php" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span> </a>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
@@ -24,8 +24,8 @@ include('../connect.php');
                         <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+                        <a href="../logout.php" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                 </ul>
             </div>
