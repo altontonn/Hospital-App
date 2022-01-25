@@ -1,13 +1,17 @@
 <?php
-readfile("../index.html")
-?>
-<?php
-    session_start();
-    $connect = new mysqli('localhost', 'root', '', 'home_based_care');
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $query = "SELECT * FROM `nutritionist` WHERE `id`= '".$_SESSION["id"]."'";
-    $result = mysqli_query($connect, $query);
-    $row = mysqli_fetch_array ($result);
+readfile("../index.html");
+session_start();
+$connect = new mysqli('localhost', 'root', '', 'home_based_care');
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
+    header("Location: ../Auth/nutritionist-login.php");
+    die();
+}
+
+$query = "SELECT * FROM `nutritionist` WHERE `id`= '".$_SESSION["id"]."'";
+$result = mysqli_query($connect, $query);
+$row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">

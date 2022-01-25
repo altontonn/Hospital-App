@@ -1,6 +1,7 @@
 <?php
 readfile("../index.html");
 include('../connect.php');
+
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">

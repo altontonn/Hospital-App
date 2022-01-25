@@ -1,15 +1,21 @@
 <?php
 readfile("../index.html");
-include ('../update-data.php');
-?>
-<?php
+include ('../update/update-caregiver.php');
+
     session_start();
     $connect = new mysqli('localhost', 'root', '', 'home_based_care');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    
+    if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
+        header("Location: ../Auth/caregiver-login.php");
+        die();
+    }
+
     $query = "SELECT * FROM `caregiver` WHERE `id`= '".$_SESSION["id"]."'";
     $result = mysqli_query($connect, $query);
     $row = mysqli_fetch_array ($result);
 ?>
+
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <form action="caregiver.php" class="form" method="POST">
