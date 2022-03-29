@@ -7,16 +7,16 @@ require '../connect.php';
     $message="";
     $success="";
     if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['sname']) && isset($_POST['email']) && isset($_POST['pwd']) && isset($_POST['dob']) && isset($_POST['gender']) && isset($_POST['status']) && isset($_POST['phone']) && isset($_POST['address'])){
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $sname = $_POST['sname'];
-        $email = $_POST['email'];
-        $pwd = $_POST['pwd'];
-        $dob = $_POST['dob'];
-        $gender = $_POST['gender'];
-        $status = $_POST['status'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address']; 
+        $fname = mysqli_real_escape_string($con, $_POST['fname']);
+        $lname = mysqli_real_escape_string($con, $_POST['lname']);
+        $sname = mysqli_real_escape_string($con, $_POST['sname']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $pwd = mysqli_real_escape_string($con, $_POST['pwd']);
+        $dob = mysqli_real_escape_string($con, $_POST['dob']);
+        $gender = mysqli_real_escape_string($con, $_POST['gender']);
+        $status = mysqli_real_escape_string($con, $_POST['status']);
+        $phone = mysqli_real_escape_string($con, $_POST['phone']);
+        $address = mysqli_real_escape_string($con, $_POST['address']); 
         if(!empty($fname) && !empty($lname) && !empty($sname) && !empty($email) && !empty($pwd) && !empty($dob) && !empty($gender) && !empty($status) && !empty($phone) && !empty($address)){
             $query = "SELECT `Firstname`, `Lastname`, `Surname`, `Email`, `Password`, `Date of Birth`, `Gender`, `Status`, `Phone`, `Address` FROM `patient` WHERE `Firstname`='$fname' AND `Lastname`='$lname' AND `Surname`='$sname' AND `Email`='$email' AND `Password`='$pwd' AND `Date of Birth`='$dob' AND `Gender`='$gender' AND `Status`='$status' AND `Phone`='$phone' AND `Address`='$address'";
             $query_run = mysqli_query($con, $query);

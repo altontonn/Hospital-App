@@ -24,7 +24,7 @@ include('../connect.php');
                         <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
                     <li>
-                        <a href="../logout.php" class="nav-link px-0 align-middle">
+                        <a href="../signout/nutritionist.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                 </ul>

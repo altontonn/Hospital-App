@@ -16,12 +16,12 @@ $row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-    <form action="nurse.php" class="form" method="POST">
+        <form action="nurse.php" class="form" method="POST">
             <div class="message text-danger text-center fs-5" ><?php if($error!="") { echo $error; } ?></div>
             <div class="message text-success bg-light text-center fs-5" ><?php if($success!="") { echo $success; } ?></div>
             <div class="row">
                 <div class="col">
-                    <h4 class="font-weight-bold text-primary">Profile</h4>
+                    <h4 class="font-weight-bold text-primary">Nurse Profile</h4>
                 </div>
                 <div clas="col" align="right">
                     <input type="hidden" name="action" value="admin_profile" />

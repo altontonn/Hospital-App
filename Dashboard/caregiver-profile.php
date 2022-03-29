@@ -23,7 +23,7 @@ include ('../update/update-caregiver.php');
             <div class="message text-success bg-light text-center fs-5" ><?php if($success!="") { echo $success; } ?></div>
             <div class="row">
                 <div class="col">
-                    <h4 class="font-weight-bold text-primary">Profile</h4>
+                    <h4 class="font-weight-bold text-primary">Caregiver Profile</h4>
                 </div>
                 <div clas="col" align="right">
                     <input type="hidden" name="action" value="admin_profile" />

@@ -1,8 +1,6 @@
 <?php
 readfile('../index.html');
 //require '../connect.php';
-?>
-<?php
 session_start();
 $message="";
     if(count($_POST)>0) {
