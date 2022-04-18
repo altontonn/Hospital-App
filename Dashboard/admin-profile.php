@@ -58,7 +58,7 @@ $row = mysqli_fetch_array ($result);
                 <div class="col-lg-6">
                     <div class="form-group p-3">
                         <label for="dob">Admin Date of Birth:</label>
-                        <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
+                        <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="Gender">Admin Gender:</label><br>
@@ -114,7 +114,7 @@ $row = mysqli_fetch_array ($result);
                             <div class="col-lg-6">
                                 <div class="form-group p-3">
                                     <label for="dob">Admin Date of Birth:</label>
-                                    <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
+                                    <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                                 </div>
                                 <div class="form-group p-3">
                                     <label for="Gender">Admin Gender:</label><br>

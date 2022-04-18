@@ -10,21 +10,21 @@
                     <span class="fs-5 d-none d-sm-inline">Menu</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li>
-                        <a href="caregiver.php" class="nav-link px-0 align-middle">
+                    <li class="nav-item">
+                        <a href="../Dashboard/caregiver-profile.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
+                        <a href="../schedule/caregiver.php" class="nav-link align-middle px-0">
                             <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Caregiver schedule</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="#" class="nav-link px-0 align-middle">
                         <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
-                    <li>
-                        <a href="../caregiver.php" class="nav-link px-0 align-middle">
+                    <li class="nav-item">
+                        <a href="../signout/caregiver.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                     

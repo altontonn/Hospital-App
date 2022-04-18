@@ -1,11 +1,9 @@
 <?php
 readfile("../index.html");
 include ('../update/update-caregiver.php');
-
     session_start();
     $connect = new mysqli('localhost', 'root', '', 'home_based_care');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    
     if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
         header("Location: ../Auth/caregiver-login.php");
         die();
@@ -18,7 +16,7 @@ include ('../update/update-caregiver.php');
 
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <form action="caregiver.php" class="form" method="POST">
+        <form action="" class="form" method="POST">
             <div class="message text-danger text-center fs-5" ><?php if($error!="") { echo $error; } ?></div>
             <div class="message text-success bg-light text-center fs-5" ><?php if($success!="") { echo $success; } ?></div>
             <div class="row">
@@ -57,7 +55,7 @@ include ('../update/update-caregiver.php');
                 <div class="col-lg-6">
                     <div class="form-group p-3">
                         <label for="dob">Caregiver Date of Birth:</label>
-                        <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
+                        <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                     </div>
                     <div class="form-group p-3">
                         <label for="Gender">Caregiver Gender:</label><br>
@@ -111,7 +109,7 @@ include ('../update/update-caregiver.php');
                             <div class="col-lg-6">
                                 <div class="form-group p-3">
                                     <label for="dob">Caregiver Date of Birth:</label>
-                                    <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
+                                    <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                                 </div>
                                 <div class="form-group p-3">
                                     <label for="Gender">Caregiver Gender:</label><br>

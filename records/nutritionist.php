@@ -27,8 +27,8 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
                 <div class="container-fluid">
                     <span class="navbar-text text-white">Add New Nutritionist</span>
                 </div>
-                <a href="#" class="nav-link px-0 align-middle">
-            <i class="fas fa-plus text-white"></i><span class="ms-3 d-none d-sm-inline fs-6"></span> </a>
+                <a href="../Auth/nutritionist.php" class="nav-link px-0 align-middle">
+                <i class="fas fa-plus text-white"></i><span class="ms-3 d-none d-sm-inline fs-6"></span> </a>
             </nav>
         <?php 
         if(mysqli_num_rows($result)>0){

@@ -24,6 +24,13 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
             <?php include("../Admin/admin.php"); ?>
         </div>
         <div class="col py-3" style="background: white;">
+            <nav class="navbar navbar-expand-sm mb-2" style="background: #4da6ff">
+                <div class="container-fluid">
+                    <span class="navbar-text text-white">Add New Counsellor</span>
+                </div>
+                <a href="../Auth/counsellor.php" class="nav-link px-0 align-middle">
+                <i class="fas fa-plus text-white"></i><span class="ms-3 d-none d-sm-inline fs-6"></span> </a>
+            </nav>
         <?php 
         if(mysqli_num_rows($result)>0){
             if(isset($_SESSION['message'])):

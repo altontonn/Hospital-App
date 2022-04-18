@@ -18,14 +18,14 @@ require '../connect.php';
         $phone = mysqli_real_escape_string($con, $_POST['phone']);
         $address = mysqli_real_escape_string($con, $_POST['address']); 
         if(!empty($fname) && !empty($lname) && !empty($sname) && !empty($email) && !empty($pwd) && !empty($dob) && !empty($gender) && !empty($status) && !empty($phone) && !empty($address)){
-            $query = "SELECT `Firstname`, `Lastname`, `Surname`, `Email`, `Password`, `Date of Birth`, `Gender`, `Status`, `Phone`, `Address` FROM `patient` WHERE `Firstname`='$fname' AND `Lastname`='$lname' AND `Surname`='$sname' AND `Email`='$email' AND `Password`='$pwd' AND `Date of Birth`='$dob' AND `Gender`='$gender' AND `Status`='$status' AND `Phone`='$phone' AND `Address`='$address'";
+            $query = "SELECT `Firstname`, `Lastname`, `Surname`, `Email`, `Password`, `Date of Birth`, `Gender`, `Status`, `Phone`, `Address` FROM `caregiver` WHERE `Firstname`='$fname' AND `Lastname`='$lname' AND `Surname`='$sname' AND `Email`='$email' AND `Password`='$pwd' AND `Date of Birth`='$dob' AND `Gender`='$gender' AND `Status`='$status' AND `Phone`='$phone' AND `Address`='$address'";
             $query_run = mysqli_query($con, $query);
-            $sql = "SELECT `Email` From `patient` WHERE `Email`='$email'";
+            $sql = "SELECT `Email` From `caregiver` WHERE `Email`='$email'";
             $result =mysqli_query($con, $sql);
             if(mysqli_num_rows($result) > 0){
                 $message = "There is already a user with that email!";
             }else{
-                $query = "INSERT INTO `patient` VALUES ('','".($fname)."','".($lname)."','".($sname)."','".($email)."','".($pwd)."','".($dob)."','".($gender)."','".($status)."','".($phone)."','".($address)."')";
+                $query = "INSERT INTO `caregiver` VALUES ('','".($fname)."','".($lname)."','".($sname)."','".($email)."','".($pwd)."','".($dob)."','".($gender)."','".($status)."','".($phone)."','".($address)."')";
 
                 if($query_run = mysqli_query($con, $query)){
                     $success = "Registered successfully";
@@ -47,49 +47,51 @@ require '../connect.php';
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group p-3">
-                    <label for="firstname">Patient Firstname</label>
+                    <label for="firstname">Caregiver Firstname</label>
                     <input type="text" class="form-control" id="fname" placeholder="Enter your firstname" name="fname">
                 </div>
                 <div class="form-group p-3">
-                    <label for="lastname">Patient Lastname</label>
+                    <label for="lastname">Caregiver Lastname</label>
                     <input type="text" class="form-control" id="lname" placeholder="Enter your lastname" name="lname">
                 </div>
                 <div class="form-group p-3">
-                    <label for="surname">Patient Surname</label>
+                    <label for="surname">Caregiver Surname</label>
                     <input type="text" class="form-control" id="sname" placeholder="Enter your surname" name="sname">
                 </div>
                 <div class="form-group p-3">
-                    <label for="email">Patient Email:</label>
+                    <label for="email">Caregiver Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group p-3">
-                    <label for="pwd">Patient Password:</label>
+                    <label for="pwd">Caregiver Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group p-3">
-                    <label for="dob">Patient Date of Birth:</label>
+                    <label for="dob">Caregiver Date of Birth:</label>
                     <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob">
                 </div>
                 <div class="form-group p-3">
-                    <label for="Gender">Patient Gender:</label><br>
+                    <label for="Gender">Caregiver Gender:</label><br>
                     <input type="radio" name="gender" value="Male"> Male
                     <input type="radio" name="gender" value="Female"> Female
                 </div>
                 <div class="form-group p-3">
-                    <label for="status">Patient Status:</label>
+                    <label for="status">Caregiver Status:</label>
                     <input type="status" class="form-control" id="status" placeholder="Enter status" name="status">
                 </div>
                 <div class="form-group p-3">
-                    <label for="phone">Patient Phone:</label>
+                    <label for="phone">Caregiver Phone:</label>
                     <input type="phone" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
                 </div>
                 <div class="form-group p-3">
-                    <label for="address">Patient Address:</label>
+                    <label for="address">Caregiver Address:</label>
                     <input type="address" class="form-control" id="address" placeholder="Enter address" name="address">
                 </div>
             </div>
         </div>
-    <input type="submit" name="submit" value="Register" class="btn bg-primary text-white"> Already a member, <a href="patient-login.php">Sign in</a>
+    <input type="submit" name="submit" value="Register" class="btn bg-primary text-white">
 </form>
+<a href="../records/caregiver.php" class="nav-link px-0 align-middle">
+                <i class="bi bi-arrow-return-left text-primary"></i><span class="ms-1 d-none d-sm-inline fs-6">Back</span> </a>
