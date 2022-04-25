@@ -20,7 +20,7 @@ if(isset($_POST['update_data'])){
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
-    $query = "UPDATE `psychotherapist` SET `Firstname`='$fname', `Lastname`='$lname', `Surname`='$sname', `Email`='$email', `Password`='$pwd', `Date of Birth`='$dob', `Gender`='$gender', `Status`='$status', `Phone`='$phone', `Address`='$address' WHERE `id`='$id'";
+    $query = "UPDATE `physiotheraphy` SET `Firstname`='$fname', `Lastname`='$lname', `Surname`='$sname', `Email`='$email', `Password`='$pwd', `Date of Birth`='$dob', `Gender`='$gender', `Status`='$status', `Phone`='$phone', `Address`='$address' WHERE `id`='$id'";
     $query_run = mysqli_query($con, $query);
 
     if($query_run){

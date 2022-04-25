@@ -18,7 +18,7 @@ readfile('index.html');
       <button class="btn btn-outline-primary mb-3 btn-lg"><a class="nav-link text-white" href="Auth/caregiver-login.php">Caregiver</a></button>
     </li>
     <li class="nav-item text-center">
-      <button class="btn btn-outline-primary mb-3 btn-lg"><a class="nav-link text-white" href="Auth/psychotherapist-login.php">Psychotherapist</a></button>
+      <button class="btn btn-outline-primary mb-3 btn-lg"><a class="nav-link text-white" href="Auth/physiotheraphy-login.php">Physiotheraphy</a></button>
     </li>
     <li class="nav-item text-center">
       <button class="btn btn-outline-primary mb-3 btn-lg"><a class="nav-link text-white" href="Auth/nurse-login.php">Nurse</a></button>

@@ -12,7 +12,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Psychotherapist schedule</span>
+                            <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Physiotheraphy schedule</span>
                         </a>
                     </li>
                     <li>
@@ -20,7 +20,7 @@
                         <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
                     <li>
-                        <a href="../signout/psychotherapist.php" class="nav-link px-0 align-middle">
+                        <a href="../signout/physiotheraphy.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                 </ul>
@@ -28,7 +28,7 @@
         </div>
         <div class="col py-3">
         <?php
-            include('../Dashboard/psychotherapist-profile.php')
+            include('../Dashboard/physiotheraphy-profile.php')
         ?>
         </div>
     </div>

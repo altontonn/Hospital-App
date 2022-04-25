@@ -1,27 +1,27 @@
 <?php
 readfile("../index.html");
 session_start();
-include("../update/update-psychotherapist.php");
+include("../update/update-Physiotheraphy.php");
 $connect = new mysqli('localhost', 'root', '', 'home_based_care');
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location: ../Auth/psychotherapist-login.php");
+    header("Location: ../Auth/physiotheraphy-login.php");
     die();
 }
 
-$query = "SELECT * FROM `psychotherapist` WHERE `id`= '".$_SESSION["id"]."'";
+$query = "SELECT * FROM `physiotheraphy` WHERE `id`= '".$_SESSION["id"]."'";
 $result = mysqli_query($connect, $query);
 $row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <form action="psychotherapist.php" class="form" method="POST">
+        <form action="physiotheraphy.php" class="form" method="POST">
             <div class="message text-danger text-center fs-5" ><?php if($error!="") { echo $error; } ?></div>
             <div class="message text-success bg-light text-center fs-5" ><?php if($success!="") { echo $success; } ?></div>
             <div class="row">
                 <div class="col">
-                    <h4 class="font-weight-bold text-primary">Psychotherapist Profile</h4>
+                    <h4 class="font-weight-bold text-primary">Physiotheraphy Profile</h4>
                 </div>
                 <div clas="col" align="right">
                     <input type="hidden" name="action" value="admin_profile" />
@@ -32,45 +32,45 @@ $row = mysqli_fetch_array ($result);
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group p-3">
-                        <label for="firstname">Psychotherapist Firstname</label>
+                        <label for="firstname">Physiotheraphy Firstname</label>
                         <input type="text" class="form-control" id="fname" placeholder="Enter your firstname" name="fname" value="<?php echo $row['Firstname']; ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="lastname">Psychotherapist Lastname</label>
+                        <label for="lastname">Physiotheraphy Lastname</label>
                         <input type="text" class="form-control" id="lname" placeholder="Enter your lastname" name="lname" value="<?php echo $row['Lastname'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="surname">Psychotherapist Surname</label>
+                        <label for="surname">Physiotheraphy Surname</label>
                         <input type="text" class="form-control" id="sname" placeholder="Enter your surname" name="sname" value="<?php echo $row['Surname'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="email">Psychotherapist Email:</label>
+                        <label for="email">Physiotheraphy Email:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $row['Email'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="pwd">Psychotherapist Password:</label>
+                        <label for="pwd">Physiotheraphy Password:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="<?php echo $row['Password'] ?>">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group p-3">
-                        <label for="dob">Psychotherapist Date of Birth:</label>
+                        <label for="dob">Physiotheraphy Date of Birth:</label>
                         <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="Gender">Psychotherapist Gender:</label><br>
+                        <label for="Gender">Physiotheraphy Gender:</label><br>
                         <input type="gender" class="form-control" id="gender" placeholder="Enter status" name="gender" value="<?php echo $row['Gender'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="status">Psychotherapist Status:</label>
+                        <label for="status">Physiotheraphy Status:</label>
                         <input type="status" class="form-control" id="status" placeholder="Enter status" name="status" value="<?php echo $row['Status'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="phone">Psychotherapist Phone:</label>
+                        <label for="phone">Physiotheraphy Phone:</label>
                         <input type="phone" class="form-control" id="phone" placeholder="Enter Phone" name="phone" value="<?php echo $row['Phone'] ?>">
                     </div>
                     <div class="form-group p-3">
-                        <label for="address">Psychotherapist Address:</label>
+                        <label for="address">Physiotheraphy Address:</label>
                         <input type="address" class="form-control" id="address" placeholder="Enter address" name="address" value="<?php echo $row['Address'] ?>">
                     </div>
                 </div>
@@ -86,45 +86,45 @@ $row = mysqli_fetch_array ($result);
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group p-3">
-                                    <label for="firstname">Psychotherapist Firstname</label>
+                                    <label for="firstname">Physiotheraphy Firstname</label>
                                     <input type="text" class="form-control" id="fname" placeholder="Enter your firstname" name="fname" value="<?php echo $row['Firstname']; ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="lastname">Psychotherapist Lastname</label>
+                                    <label for="lastname">Physiotheraphy Lastname</label>
                                     <input type="text" class="form-control" id="lname" placeholder="Enter your lastname" name="lname" value="<?php echo $row['Lastname'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="surname">Psychotherapist Surname</label>
+                                    <label for="surname">Physiotheraphy Surname</label>
                                     <input type="text" class="form-control" id="sname" placeholder="Enter your surname" name="sname" value="<?php echo $row['Surname'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="email">Psychotherapist Email:</label>
+                                    <label for="email">Physiotheraphy Email:</label>
                                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $row['Email'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="pwd">Psychotherapist Password:</label>
+                                    <label for="pwd">Physiotheraphy Password:</label>
                                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="<?php echo $row['Password'] ?>">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group p-3">
-                                    <label for="dob">Psychotherapist Date of Birth:</label>
+                                    <label for="dob">Physiotheraphy Date of Birth:</label>
                                     <input type="DOB" class="form-control" id="DOB" placeholder="Enter Date of Birth" name="dob" value="<?php echo $row['Date of Birth'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="Gender">Psychotherapist Gender:</label><br>
+                                    <label for="Gender">Physiotheraphy Gender:</label><br>
                                     <input type="gender" class="form-control" id="gender" placeholder="Enter status" name="gender" value="<?php echo $row['Gender'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="status">Psychotherapist Status:</label>
+                                    <label for="status">Physiotheraphy Status:</label>
                                     <input type="status" class="form-control" id="status" placeholder="Enter status" name="status" value="<?php echo $row['Status'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="phone">Psychotherapist Phone:</label>
+                                    <label for="phone">Physiotheraphy Phone:</label>
                                     <input type="phone" class="form-control" id="phone" placeholder="Enter Phone" name="phone" value="<?php echo $row['Phone'] ?>">
                                 </div>
                                 <div class="form-group p-3">
-                                    <label for="address">Psychotherapist Address:</label>
+                                    <label for="address">Physiotheraphy Address:</label>
                                     <input type="address" class="form-control" id="address" placeholder="Enter address" name="address" value="<?php echo $row['Address'] ?>">
                                 </div>
                             </div>

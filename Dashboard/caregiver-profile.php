@@ -8,7 +8,6 @@ include ('../update/update-caregiver.php');
         header("Location: ../Auth/caregiver-login.php");
         die();
     }
-
     $query = "SELECT * FROM `caregiver` WHERE `id`= '".$_SESSION["id"]."'";
     $result = mysqli_query($connect, $query);
     $row = mysqli_fetch_array ($result);

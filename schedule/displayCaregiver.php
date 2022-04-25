@@ -12,6 +12,7 @@ if(isset($_POST['displaySend'])){
     $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Name</th>
                         <th>Schedule Date</th>
                         <th>Schedule Day</th>
                         <th>Start Time</th>
@@ -20,8 +21,15 @@ if(isset($_POST['displaySend'])){
                         <th colspan="2" class="text-center">Action</th>
                     </tr>
                 </thead>';
+                // while($row = mysqli_fetch_array($conn)){
+                //     $name = $row['Firstname'];
+                //     '<td>'.$name.'</td>';
+                // }
                 while($row = mysqli_fetch_array($resultAll)){
                     $id = $row["id"];
+                    // $uname = $row["Userid"].$name;
+                    
+                    $user = $row["Userid"];
                     $date = $row["caregiver_schedule_date"];
                     $day = $row["caregiver_schedule_day"];
                     $start = $row["caregiver_schedule_start_time"];
@@ -29,13 +37,14 @@ if(isset($_POST['displaySend'])){
                     $consult = $row["average_consulting_time"];
                 $table .= '<tbody>
                     <tr>
+                    <td>'.$user.'</td>
                     <td>'.$date.'</td>
                     <td>'.$day.'</td>
                     <td>'.$start.'</td>
                     <td>'.$end.'</td>
                     <td>'.$consult.'</td>
                     <td><a class="btn btn-primary text-white" href="../edit/schedule-caregiver.php?edit='.$id.'">Edit</a></td>
-                    <td><a class="btn btn-danger text-white" href="../delete/caregiver-schedule.php?delete='.$id.'">Delete</a></td>
+                    <td><a class="btn btn-danger text-white" onclick="deleteUser('.$id.')">Delete</a></td>
                     </tr>
                 </tbody>';
                 }

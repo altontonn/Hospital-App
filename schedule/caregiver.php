@@ -1,19 +1,17 @@
 <?php
 require("../connect.php");
 readfile("../index.html");
+include('insert.php');
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/caregiver-login.php");
     die();
 }
+$userid = "SELECT `Firstname`, `Lastname` FROM `caregiver` WHERE `id`= '".$_SESSION["id"]."'";
+$user_query = mysqli_query($con, $userid);
+$user_row = mysqli_fetch_array($user_query);
 $query = "SELECT * FROM `caregiver_schedule`";
 $resultAll = mysqli_query($con, $query);
-extract($_POST);
-if(isset($_POST['dateSend']) && isset($_POST['daySend']) && isset($_POST['startSend']) && isset($_POST['endSend']) && isset($_POST['consultSend'])){
-
-    $query = "INSERT INTO `caregiver_schedule` (`caregiver_schedule_date`, `caregiver_schedule_day`, `caregiver_schedule_start_time`, `caregiver_schedule_end_time`, `average_consulting_time`) VALUES ('$dateSend', '$daySend', '$startSend', '$endSend', '$consultSend')";
-    $result = mysqli_query($con, $query);
-}
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
@@ -57,32 +55,9 @@ if(isset($_POST['dateSend']) && isset($_POST['daySend']) && isset($_POST['startS
                         </div>
                     </div>
                 </div>
-                <div class="message text-success bg-light text-center fs-5" id="msg"></div>
-                <div class="card-body" id="displayDataTable">
-                    <?php
-                    //extract($_POST);
-                    if(mysqli_num_rows($resultAll)>0){
-                        if(isset($_SESSION['message'])):
-                    ?>
-                        <div class="alert alert-<?=$_SESSION['msg_type'];?>">
-                            <?php 
-                                echo $_SESSION['message']; 
-                                unset($_SESSION['message']);
-                            ?>
-                        </div>
-                        <?php endif ?>
-                        
-                        <?php 
-                        } else{
-                            ?>
-                            <div class="alert alert-danger text-center">
-                                <strong><?php echo 'No records found!!'; ?></strong>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                </div>
+                <div class="text-success bg-light text-center fs-5" id="msgr"></div>
+                <div class="text-success bg-light text-center fs-5" id="del-msg"></div>
+                <div class="card-body" id="displayDataTable"></div>
             </div>
         </div>
         <!-- Modal form -->
@@ -96,17 +71,24 @@ if(isset($_POST['dateSend']) && isset($_POST['daySend']) && isset($_POST['startS
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group p-3">
+                                    <label for="firstname">Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-person"></i></span>
+                                        <input type="text" class="form-control" id="user-name" name="user-name" value="<?php echo $user_row["Firstname"] ?> <?php echo $user_row["Lastname"] ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group p-3">
                                     <label for="firstname">Schedule Date</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>
-                                        <input type="date" class="form-control" id="schedule-date" name="schedule-date">
+                                        <input type="text" class="form-control" id="schedule-date" name="schedule-date">
                                     </div>
                                 </div>
                                 <div class="form-group p-3">
                                     <label for="start time">Schedule Day</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                                        <input type="weekdays" class="form-control" id="schedule-day" name="schedule-day">
+                                        <input type="text" class="form-control" id="schedule-date" name="schedule-day" value="<?php echo $day?>">
                                     </div>
                                 </div>
                                 <div class="form-group p-3">
@@ -154,8 +136,15 @@ if(isset($_POST['dateSend']) && isset($_POST['daySend']) && isset($_POST['startS
 </div>
 
 <script>
-//to make data stay  in page
+        
 $(document).ready(function(){
+    var date = new Date();
+    date.setDate(date.getDate());
+
+    $('#schedule-date').datepicker({
+        startDate: date,
+        format: "yyyy-mm-dd"
+    });
     displayData();
 })
     //display data function
@@ -163,7 +152,7 @@ $(document).ready(function(){
         let displayData = "true";
         $.ajax({
             url: "displayCaregiver.php",
-            type: "POST",
+            type: "post",
             data:{
                 displaySend: displayData
             },
@@ -174,16 +163,19 @@ $(document).ready(function(){
     }
 
     function addUser(){
+        let userAdd = $('#user-name').val();
         let dateAdd = $('#schedule-date').val();
-        let dayAdd = $('#schedule-day').val();
+        let dayAdd = $('#schedule-date').val();
         let startAdd = $('#start-time').val();
         let endAdd = $('#end-time').val();
         let consultAdd = $('#average-consulting-time').val();
-
+        //console.log(dateAdd);
+        // date('l', strtotime($_POST["doctor_schedule_date"]))
         $.ajax({
-            url:"caregiver.php",
-            type: "POST",
+            url:"insert.php",
+            type: "post",
             data:{
+                userSend: userAdd,
                 dateSend: dateAdd,
                 daySend: dayAdd,
                 startSend: startAdd,
@@ -191,13 +183,32 @@ $(document).ready(function(){
                 consultSend: consultAdd
             },
             success:function(data, status){
-                $('#msg').html(data).fadeIn('slow');
-                $('#msg').html("Schedule Inserted Successfully").fadeIn('slow') //also show a success message 
+                displayData();
+                $('#msgr').html(data);
+                $('#msg').html("Schedule Inserted Successfully").fadeIn('slow')  
                 setTimeout(function(){
                     $('#msg').fadeOut('slow')
                 }, 5000)
-                displayData();
             }
         });
     }
+    //delete a record
+    function deleteUser(deleteId){
+            $.ajax({
+                url:"../delete/caregiver-schedule.php",
+                type: 'post',
+                data:{
+                    deleteSend: deleteId
+                },
+                success:function(data, status){
+                    displayData();
+                    $('#del-msg').html("Schedule Delete Successfully").fadeIn('slow')  
+                    setTimeout(function(){
+                    $('#del-msg').fadeOut('slow')
+                }, 5000)
+                }
+            })
+
+        }
+    
 </script>

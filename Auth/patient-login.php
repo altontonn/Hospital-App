@@ -22,7 +22,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("");
+header("location: ../Admin/patient.php");
 }
 ?>
     <div class="container">

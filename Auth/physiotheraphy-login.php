@@ -9,7 +9,7 @@ $message="";
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $con = mysqli_connect('localhost', 'root', '', 'home_based_care');
         //$con = mysqli_connect('127.0.0.1:3306','root','','admin') or die('Unable To connect');
-        $result = mysqli_query($con,"SELECT * FROM `psychotherapist` WHERE email='". $_POST["email"]."' AND password ='".$_POST["pwd"]."'");
+        $result = mysqli_query($con,"SELECT * FROM `physiotheraphy` WHERE email='". $_POST["email"]."' AND password ='".$_POST["pwd"]."'");
         $row  = mysqli_fetch_array($result);
         if(is_array($row)) {
         $_SESSION["id"] = $row['id'];
@@ -22,7 +22,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/psychotherapist.php");
+header("Location: ../Admin/physiotheraphy.php");
 }
 ?>
     <div class="container">
@@ -31,11 +31,11 @@ header("Location: ../Admin/psychotherapist.php");
             <form action="" class="border p-2" method="POST">
             <div class="message text-danger text-center fs-5" ><?php if($message!="") { echo $message; } ?></div>
                 <div class="mb-3 mt-3">
-                    <label for="email">Psychotherapist Email:</label>
+                    <label for="email">Physiotheraphy Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
                 <div class="mb-3">
-                    <label for="pwd">Psychotherapist Password:</label>
+                    <label for="pwd">Physiotheraphy Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
                 </div>
                 <input type="submit" name="submit" Value="Sign In" class="btn btn-primary">

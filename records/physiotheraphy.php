@@ -25,9 +25,9 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
         <div class="col py-3" style="background: white;">
             <nav class="navbar navbar-expand-sm mb-2" style="background: #4da6ff">
                 <div class="container-fluid">
-                    <span class="navbar-text text-white">Add New Psychotherapist</span>
+                    <span class="navbar-text text-white">Add New Physiotheraphy</span>
                 </div>
-                <a href="../Auth/psychotherapist.php" class="nav-link px-0 align-middle">
+                <a href="../Auth/physiotheraphy.php" class="nav-link px-0 align-middle">
                 <i class="fas fa-plus text-white"></i><span class="ms-3 d-none d-sm-inline fs-6"></span> </a>
             </nav>
         <?php 
@@ -74,8 +74,8 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
                     <td><?php echo $row['Status'] ?></td>
                     <td><?php echo $row['Phone'] ?></td>
                     <td><?php echo $row['Address'] ?></td>
-                    <td><a class="btn btn-primary text-white" href="../edit/psychotherapist.php?edit=<?php echo $row['id']?>">Edit</a></td>
-                    <td><a class="btn btn-danger text-white" href="../delete/psychotherapist.php?delete=<?php echo $row['id']?>">Delete</a></td>
+                    <td><a class="btn btn-primary text-white" href="../edit/physiotheraphy.php?edit=<?php echo $row['id']?>">Edit</a></td>
+                    <td><a class="btn btn-danger text-white" href="../delete/physiotheraphy.php?delete=<?php echo $row['id']?>">Delete</a></td>
                     </tr>
                 </tbody>
                 <?php 
