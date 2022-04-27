@@ -1,11 +1,11 @@
-<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"  style="position: fixed;">
     <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span class="fs-5 d-none d-sm-inline">Menu</span>
     </a>
     
     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
         <li class="nav-item">
-            <a href="../Dashboard/admin-profile.php" class="nav-link align-middle px-0">
+            <a href="" class="nav-link align-middle px-0">
                 <i class="fas fa-user-circle"></i> <span class="ms-1 d-none d-sm-inline">Profile</span>
             </a>
         </li>
@@ -97,12 +97,12 @@
             <img src="../Img/2020-08-23.jpg" alt="hugenerd" width="30" height="30" class="rounded-circle">
             <span class="d-none d-sm-inline mx-1">loser</span>
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <ul class="dropdown-menu dropdown-menu-dark">
             <!-- <li><a class="dropdown-item" href="admin.php">Profile</a></li>
             <li>
                 <hr class="dropdown-divider">
             </li> -->
-            <li><a class="dropdown-item" href="../signout/admin.php">Sign out</a></li>
+            <li><a class="dropdown-item text-primary" href="../signout/admin.php">Sign out</a></li>
         </ul>
     </div>
 </div>

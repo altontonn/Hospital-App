@@ -1,6 +1,6 @@
 <?php
-require("../connect.php");
-readfile("../index.html");
+require("../../connect.php");
+readfile("../../index.html");
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/caregiver-login.php");

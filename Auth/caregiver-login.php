@@ -20,7 +20,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/caregiver.php");
+header("Location: ../Dashboard/caregiver-profile.php");
 }
 ?>
 

@@ -22,7 +22,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/physiotheraphy.php");
+header("Location: ../Dashboard/physiotheraphy-profile.php");
 }
 ?>
     <div class="container">

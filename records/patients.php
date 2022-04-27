@@ -10,19 +10,14 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
 }
 ?>
 <style>
-   tr:nth-child(even){
-       background: red;
-   }
-   table.table{
-       background-color: cornsilk;
-   }
+   
 </style>
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <?php include("../Admin/admin.php"); ?>
         </div>
-        <div class="col py-3" style="background: white;">
+        <div class="col p-1">
 
         <?php 
         if(mysqli_num_rows($result)>0){
@@ -35,8 +30,8 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
                 ?>
             </div>
         <?php endif ?>
-            <table class="table table-responsive">
-                <thead class="">
+            <table class="table table-responsive table-bordered table-hover" width="100%" cellspacing="0" style="overflow-y: hidden;">
+                <thead class="thead-light">
                     <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Fname</th>
@@ -49,6 +44,7 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
                     <th scope="col">Status</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Address</th>
+                    <th colspan="2" class="text-center">Action</th>
                     </tr>
                 </thead>
                 <?php

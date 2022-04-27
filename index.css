@@ -1,6 +1,7 @@
-/* body{
+body{
     font-family: 'Courier New', Courier, monospace;
-} */
+    background-color: aquamarine;
+}
 .cover {
     background-image: linear-gradient(rgba(57, 59, 63, 0.822) ,rgba(74, 79, 87, 0.849)) , url(Img/go.png);
     background-position: center;
