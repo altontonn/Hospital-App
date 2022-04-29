@@ -14,7 +14,10 @@ $row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-8 mx-auto my-2 border border-1">
+        <div class="col-auto col-sm-4 col-md-4 col-lg-4 col-xl-3 px-sm-2 px-0" style="background-color: #212529;">
+            <?php include("../Admin/patient.php") ?>
+        </div>
+        <div class="col py-3">
             <form action="Patient.php" class="form" method="POST">
                 <div class="message text-danger text-center fs-5" ><?php if($error!="") { echo $error; } ?></div>
                 <div class="message text-success bg-light text-center fs-5" ><?php if($success!="") { echo $success; } ?></div>

@@ -21,7 +21,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/nurse.php");
+header("Location: ../Dashboard/nurse-profile.php");
 }
 ?>
     <div class="container">

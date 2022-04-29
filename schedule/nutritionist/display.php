@@ -3,10 +3,10 @@ require("../../connect.php");
 readfile("../../index.html");
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/physiotheraphy-login.php");
+    header("Location:../Auth/nutritionist-login.php");
     die();
 }
-$query = "SELECT * FROM `physiotheraphy_schedule`";
+$query = "SELECT * FROM `nutritionist_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
     $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
@@ -23,7 +23,7 @@ if(isset($_POST['displaySend'])){
                 </thead>';
                 while($row = mysqli_fetch_array($resultAll)){
                     $id = $row["id"];
-                    $user = $row["User_id"];
+                    $user = $row["user_id"];
                     $date = $row["schedule_date"];
                     $day = $row["schedule_day"];
                     $start = $row["start_time"];
@@ -37,7 +37,7 @@ if(isset($_POST['displaySend'])){
                     <td>'.$start.'</td>
                     <td>'.$end.'</td>
                     <td>'.$consult.'</td>
-                    <td><a class="btn btn-primary text-white" href="../../edit/schedule-physiotheraphy.php?edit='.$id.'">Edit</a></td>
+                    <td><a class="btn btn-primary text-white" href="../../edit/schedule-nutritionist.php?edit='.$id.'">Edit</a></td>
                     <td><a class="btn btn-danger text-white" onclick="deleteUser('.$id.')">Delete</a></td>
                     </tr>
                 </tbody>';

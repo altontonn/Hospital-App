@@ -22,7 +22,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/counsellor.php");
+header("Location: ../Dashboard/counsellor-profile.php");
 }
 ?>
     <div class="container">

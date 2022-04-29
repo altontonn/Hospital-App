@@ -22,7 +22,7 @@ $message="";
         }
     }
 if(isset($_SESSION["id"])) {
-header("Location: ../Admin/nutritionist.php");
+header("Location: ../Dashboard/nutritionist-profile.php");
 }
 ?>
     <div class="container">
