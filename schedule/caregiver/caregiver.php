@@ -195,7 +195,7 @@ $(document).ready(function(){
     //delete a record
     function deleteUser(deleteId){
             $.ajax({
-                url:"../delete/caregiver-schedule.php",
+                url:"../../delete/caregiver-schedule.php",
                 type: 'post',
                 data:{
                     deleteSend: deleteId

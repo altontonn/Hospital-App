@@ -43,7 +43,7 @@ if(isset($_POST['displaySend'])){
                     <td>'.$start.'</td>
                     <td>'.$end.'</td>
                     <td>'.$consult.'</td>
-                    <td><a class="btn btn-primary text-white" href="../../edit/schedule-caregiver.php?edit='.$id.'">Edit</a></td>
+                    <td><a class="btn btn-primary text-white" href="edit.php?edit='.$id.'">Edit</a></td>
                     <td><a class="btn btn-danger text-white" onclick="deleteUser('.$id.')">Delete</a></td>
                     </tr>
                 </tbody>';

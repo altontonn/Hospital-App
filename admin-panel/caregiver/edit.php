@@ -1,7 +1,7 @@
 <?php 
-require_once("../connect.php");
-readfile("../index.html");
-include("../update/update-caregiver-schedule.php");
+require_once("../../connect.php");
+readfile("../../index.html");
+include("../../update/update-caregiver-schedule.php");
 
 session_start();
 $id = $_GET['edit'];
@@ -81,7 +81,7 @@ while($row = mysqli_fetch_assoc($result)){
             </div>
             <button type="submit" name="update_data" class="btn btn-primary my-2 mx-3 text-white">Update</button>
         </form>
-        <a href="../schedule/caregiver/caregiver.php" class="nav-link px-0 align-middle">
+        <a href="caregiver.php" class="nav-link px-0 align-middle">
                 <i class="bi bi-arrow-return-left text-primary"></i><span class="ms-1 d-none d-sm-inline fs-6">Back</span> </a>
         </div>
     </div>

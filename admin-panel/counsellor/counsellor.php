@@ -4,13 +4,13 @@ readfile("../../index.html");
 include('insert.php');
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/nurse-login.php");
+    header("Location:../Auth/counsellor-login.php");
     die();
 }
-$userid = "SELECT `Firstname`, `Lastname` FROM `nurse` WHERE `id`= '".$_SESSION["id"]."'";
+$userid = "SELECT `Firstname`, `Lastname` FROM `counsellor` WHERE `id`= '".$_SESSION["id"]."'";
 $user_query = mysqli_query($con, $userid);
 $user_row = mysqli_fetch_array($user_query);
-$query = "SELECT * FROM `nurse_schedule`";
+$query = "SELECT * FROM `counsellor_schedule`";
 $resultAll = mysqli_query($con, $query);
 ?>
 <div class="container-fluid">
@@ -22,12 +22,12 @@ $resultAll = mysqli_query($con, $query);
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
-                        <a href="../../Dashboard/nurse-profile.php" class="nav-link px-0 align-middle">
+                        <a href="../../Dashboard/counsellor-profile.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
                     </li>
                     <li class="nav-item">
-                        <a href="Nurse.php" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Nurse schedule</span>
+                        <a href="counsellor.php" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Counsellor schedule</span>
                         </a>
                     </li>
                     <li>
@@ -35,20 +35,20 @@ $resultAll = mysqli_query($con, $query);
                         <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
                     <li>
-                        <a href="../../signout/Nurse.php" class="nav-link px-0 align-middle">
+                        <a href="../../signout/counsellor.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col py-3" style="padding-left: 15rem;">
-            <h4 class="mb-4 text-gray-800">Nurse Schedule</h4>
+            <h4 class="mb-4 text-gray-800">Counsellor Schedule</h4>
         <!-- <span id="message"></span> -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col">
-                            <h6 class="m-0 font-weight-bold text-primary">Nurse Schedule List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Counsellor Schedule List</h6>
                         </div>
                         <div class="col" align="right">
                             <button type="button" name="add_exam" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success btn-circle btn-sm"><i class="fas fa-plus"></i></button>
@@ -65,7 +65,7 @@ $resultAll = mysqli_query($con, $query);
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modal_title">Add Nurse Schedule Data</h4>
+                        <h4 class="modal-title" id="modal_title">Add Counsellor Schedule Data</h4>
                     </div>
                     
                         <div class="row">
@@ -106,11 +106,10 @@ $resultAll = mysqli_query($con, $query);
                                             <option value="">Select Consulting Duration</option>
                                             <?php
                                             $count = 0;
-                                            $min = ' Minute';
                                             for($i = 1; $i <= 15; $i++)
                                             {
                                                 $count += 5;
-                                                echo '<option value="'.$count.''.$min.'">'.$count.' Minute</option>';
+                                                echo '<option value="'.$count.'">'.$count.' Minute</option>';
                                             }
                                             ?>
                                         </select>
@@ -187,7 +186,7 @@ $(document).ready(function(){
     //delete a record
     function deleteUser(deleteId){
             $.ajax({
-                url:"../../delete/nurse-schedule.php",
+                url:"../../delete/counsellor-schedule.php",
                 type: 'post',
                 data:{
                     deleteSend: deleteId

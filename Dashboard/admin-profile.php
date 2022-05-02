@@ -14,7 +14,7 @@ $row = mysqli_fetch_array ($result);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="col col-sm-3 col-md-3 col-lg-3 col-xl-2 px-sm-2 px-0 min-vh-100" style="background-color: #212529;">
             <?php include("../Admin/admin.php"); ?>
         </div>
         <div class="col py-3">
