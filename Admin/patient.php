@@ -12,28 +12,29 @@
     <ul class="list-group list-group-flush flex-column" id="menu">
         <li class="list-group-item d-flex justify-content-center">
             <a href="../appointments/caregiver.php" class="nav-link d-flex align-items-center px-0">
-                <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Caregiver</span> </a>
+            <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/100/000000/external-caregiver-inhome-service-flaticons-flat-flat-icons-3.png" alt="caregiver image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Caregiver</span></a>
         </li>
         <li class="list-group-item d-flex justify-content-center">
             <a href="../appointments/counsellor.php" class="nav-link d-flex align-items-center align-middle px-0">
-                <i class="fs-4 fas fa-user-friends"></i> <span class="ms-1 d-none d-sm-inline">Counsellor</span>
-            </a>
-        </li>
-        <li class="list-group-item d-flex justify-content-center">
-            <a href="../appointments/nurse.php" class="nav-link d-flex align-items-center px-0 align-middle">
-            <i class="fs-4 fas fa-user-nurse"></i><span class="ms-1 d-none d-sm-inline">Nurse</span></a>
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-counselor-psychology-flaticons-lineal-color-flat-icons-4.png" alt="counsellor image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Counsellor</span></a>
+        </a>
+    </li>
+    <li class="list-group-item d-flex justify-content-center">
+        <a href="../appointments/nurse.php" class="nav-link d-flex align-items-center px-0 align-middle">
+        <img src="https://img.icons8.com/office/80/000000/nurse-female--v1.png" alt="counsellor image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Nurse</span></a>
+            
         </li>
         <li class="list-group-item d-flex justify-content-center">
             <a href="../appointments/nutritionist.php" class="nav-link d-flex align-items-center px-0 align-middle">
-            <img src="../img/diet.png" alt="nutritionist" class="bg-primary" style="height: 20px; width: 20px;"> </i><span class="ms-1 d-none d-sm-inline">Nutritionist</span></a>
+            <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/100/000000/external-nutritionist-dieting-flaticons-flat-flat-icons.png" alt="nutritionist image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Nutritionist</span></a>
         </li>
         <li class="list-group-item d-flex justify-content-center">
             <a href="../appointments/physiotheraphy.php" class="nav-link d-flex align-items-center px-0 align-middle">
-            <img src="../img/psychotherapy.png" alt="nutritionist" class="bg-primary" style="height: 20px; width: 20px;"><span class="ms-1 d-none d-sm-inline">Psychotherapist</span></a>
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Psychotherapist</span></a>
         </li>
         <li class="list-group-item d-flex justify-content-center">
             <a href="../signout/patient.php" class="nav-link px-0 align-middle">
-                <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
+                <i class="fs-4 bi bi-power" style="color: aliceblue;"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
         </li>
     </ul>
 </div>
