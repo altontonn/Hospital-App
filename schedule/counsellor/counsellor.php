@@ -71,13 +71,6 @@ $resultAll = mysqli_query($con, $query);
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group p-3">
-                                    <label for="firstname">Name</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-person"></i></span>
-                                        <input type="text" class="form-control" id="user-name" name="user-name" value="<?php echo $user_row["Firstname"] ?> <?php echo $user_row["Lastname"] ?>">
-                                    </div>
-                                </div>
-                                <div class="form-group p-3">
                                     <label for="firstname">Schedule Date</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>

@@ -9,8 +9,13 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     die();
 }
 $query = "SELECT * FROM `admin` WHERE `id`= '".$_SESSION["id"]."'";
-$result = mysqli_query($connect, $query);
-$row = mysqli_fetch_array ($result);
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+
+// Selecting the logged in user
+$admin = "SELECT * FROM `admin` WHERE `id`= '".$_SESSION["id"]."'";
+$res = mysqli_query($con, $admin);
+$row_admin = mysqli_fetch_array ($res);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">

@@ -84,13 +84,6 @@ $resultAll = mysqli_query($con, $query);
                                         <input type="text" class="form-control" id="schedule-date" name="schedule-date">
                                     </div>
                                 </div>
-                                <!-- <div class="form-group p-3">
-                                    <label for="start time">Schedule Day</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="fas fa-clock"></i></span>
-                                        <input type="text" class="form-control" id="schedule-date" name="schedule-day" value="">
-                                    </div>
-                                </div> -->
                                 <div class="form-group p-3">
                                     <label for="start time">Start Time</label>
                                     <div class="input-group">

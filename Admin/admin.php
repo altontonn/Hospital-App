@@ -45,7 +45,7 @@
                     <a href="../records/counsellor.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                    <a href="../admin-panel/counsellor/counsellor.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                 </li>
                 <li>
                     <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -60,7 +60,7 @@
                     <a href="../records/nurse.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                    <a href="../admin-panel/nurse/nurse.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                 </li>
                 <li>
                     <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -74,7 +74,7 @@
                     <a href="../records/nutritionist.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                    <a href="../admin-panel/nutritionist/nutritionist.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                 </li>
                 <li>
                     <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -83,13 +83,13 @@
         </li>
         <li>
             <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Psychotherapist</span> </a>
+            <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Physiotheraphy</span> </a>
             <ul class="collapse nav flex-column ms-5 text-white" id="submenu5" data-bs-parent="#menu">
                 <li class="w-100">
                     <a href="../records/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                    <a href="../admin-panel/physiotheraphy/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                 </li>
                 <li>
                     <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -99,9 +99,9 @@
     </ul>
     <hr>
     <div class="dropdown pb-4">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="go care" width="30" height="30" class="rounded-circle">
-            <span class="d-none d-sm-inline mx-1"><?php echo $row['Firstname'] ?></span>
+            <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname'] ?></span>
         </a>
         <ul class="dropdown-menu">
             <!-- <li><a class="dropdown-item" href="admin.php">Profile</a></li>

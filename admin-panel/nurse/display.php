@@ -3,10 +3,10 @@ require("../../connect.php");
 readfile("../../index.html");
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/counsellor-login.php");
+    header("Location:../Auth/admin-login.php");
     die();
 }
-$query = "SELECT * FROM `counsellor_schedule`";
+$query = "SELECT * FROM `nurse_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
     $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">

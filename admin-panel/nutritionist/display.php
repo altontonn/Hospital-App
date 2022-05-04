@@ -3,10 +3,10 @@ require("../../connect.php");
 readfile("../../index.html");
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/counsellor-login.php");
+    header("Location:../Auth/nurse-login.php");
     die();
 }
-$query = "SELECT * FROM `counsellor_schedule`";
+$query = "SELECT * FROM `nutritionist_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
     $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
@@ -37,7 +37,7 @@ if(isset($_POST['displaySend'])){
                     <td>'.$start.'</td>
                     <td>'.$end.'</td>
                     <td>'.$consult.'</td>
-                    <td><a class="btn btn-primary text-white" href="edit.php?edit='.$id.'">Edit</a></td>
+                    <td><a class="btn btn-primary text-white" href="../../edit/schedule-nutritionist.php?edit='.$id.'">Edit</a></td>
                     <td><a class="btn btn-danger text-white" onclick="deleteUser('.$id.')">Delete</a></td>
                     </tr>
                 </tbody>';

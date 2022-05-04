@@ -4,7 +4,7 @@ readfile("../../index.html");
 include('insert.php');
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/caregiver-login.php");
+    header("Location:../Auth/admin-login.php");
     die();
 }
 // Selecting the admin logged in user
@@ -47,7 +47,7 @@ $row_admin = mysqli_fetch_array ($res);
                                 <a href="../../records/caregiver.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                             </li>
                             <li>
-                                <a href="caregiver.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                                <a href="../caregiver/caregiver.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -101,13 +101,13 @@ $row_admin = mysqli_fetch_array ($res);
                     </li>
                     <li>
                         <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Psychotherapist</span> </a>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Physiotheraphy</span> </a>
                         <ul class="collapse nav flex-column ms-5 text-white" id="submenu5" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="../../records/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                             </li>
                             <li>
-                                <a href="../physiotheraphy/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
+                                <a href="physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Apointments</span></a>
@@ -117,28 +117,28 @@ $row_admin = mysqli_fetch_array ($res);
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
-                    <a href="#one" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="go care" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname']?></span>
+                    <a href="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname'] ?></span>
                     </a>
-                    <ul class="dropdown-menu" id="one">
+                    <ul class="dropdown-menu dropdown-menu-dark">
                         <!-- <li><a class="dropdown-item" href="admin.php">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li> -->
-                        <li class="px-1"><a class="dropdown-item text-center" href="../../signout/admin.php">Sign out</a></li>
+                        <li><a class="dropdown-item text-primary" href="../../signout/admin.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col py-3">
-            <h4 class="mb-4 text-gray-800">Caregiver Schedule</h4>
+            <h4 class="mb-4 text-gray-800">Physiotheraphy Schedule</h4>
         <!-- <span id="message"></span> -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col">
-                            <h6 class="m-0 font-weight-bold text-primary">Caregiver Schedule List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Physiotheraphy Schedule List</h6>
                         </div>
                         <div class="col" align="right">
                             <button type="button" name="add_exam" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success btn-circle btn-sm"><i class="fas fa-plus"></i></button>
@@ -155,7 +155,7 @@ $row_admin = mysqli_fetch_array ($res);
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modal_title">Add Caregiver Schedule Data</h4>
+                        <h4 class="modal-title" id="modal_title">Add Physiotheraphy Schedule Data</h4>
                     </div>
                     
                     <div class="row">
@@ -165,9 +165,9 @@ $row_admin = mysqli_fetch_array ($res);
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fas fa-person"></i></span>
                                     <select type="text" class="form-control" id="user-name" name="user-name">
-                                        <option value="">Select a Caregiver</option>
+                                        <option value="">Select a Physiotheraphy</option>
                                         <?php
-                                            $choose = "SELECT * FROM `caregiver`";
+                                            $choose = "SELECT * FROM `physiotheraphy";
                                             $chos = mysqli_query($con, $choose);
                                             while($row=mysqli_fetch_array($chos)){
                                                 echo '
@@ -244,7 +244,7 @@ $(document).ready(function(){
     function displayData(){
         let displayData = "true";
         $.ajax({
-            url: "displayCaregiver.php",
+            url: "display.php",
             type: "post",
             data:{
                 displaySend: displayData
@@ -288,7 +288,7 @@ $(document).ready(function(){
     //delete a record
     function deleteUser(deleteId){
             $.ajax({
-                url:"../../delete/caregiver-schedule.php",
+                url:"../../delete/counsellor-schedule.php",
                 type: 'post',
                 data:{
                     deleteSend: deleteId

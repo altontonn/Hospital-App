@@ -8,6 +8,10 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/admin-login.php");
     die();
 }
+// Selecting the admin logged in user
+$admin = "SELECT * FROM `admin` WHERE `id`= '".$_SESSION["id"]."'";
+$res = mysqli_query($con, $admin);
+$row_admin = mysqli_fetch_array ($res);
 ?>
 <div class="container-fluid">
     <div class="row flex-nowrap">

@@ -3,10 +3,10 @@ require("../../connect.php");
 readfile("../../index.html");
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/counsellor-login.php");
+    header("Location:../Auth/admin-login.php");
     die();
 }
-$query = "SELECT * FROM `counsellor_schedule`";
+$query = "SELECT * FROM `physiotheraphy_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
     $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
@@ -23,7 +23,7 @@ if(isset($_POST['displaySend'])){
                 </thead>';
                 while($row = mysqli_fetch_array($resultAll)){
                     $id = $row["id"];
-                    $user = $row["user_id"];
+                    $user = $row["User_id"];
                     $date = $row["schedule_date"];
                     $day = $row["schedule_day"];
                     $start = $row["start_time"];

@@ -8,6 +8,7 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/patient-login.php");
     die();
 }
+//Selecting the patient logged in user
 $query = "SELECT * FROM `patient` WHERE `id`= '".$_SESSION["id"]."'";
 $result = mysqli_query($connect, $query);
 $row = mysqli_fetch_array ($result);
