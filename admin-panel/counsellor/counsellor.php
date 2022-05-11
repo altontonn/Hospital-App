@@ -4,7 +4,7 @@ readfile("../../index.html");
 include('insert.php');
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/admin-login.php");
+    header("Location:../../Auth/admin-login.php");
     die();
 }
 // Selecting the admin logged in user
@@ -75,7 +75,7 @@ $row_admin = mysqli_fetch_array ($res);
                         <img src="https://img.icons8.com/office/80/000000/nurse-female--v1.png" alt="counsellor image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Nurse</span> </a>
                         <ul class="collapse nav flex-column ms-5 text-white" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="../records/nurse.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
+                                <a href="../../records/nurse.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                             </li>
                             <li>
                                 <a href="../nurse/nurse.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
@@ -89,7 +89,7 @@ $row_admin = mysqli_fetch_array ($res);
                         <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/100/000000/external-nutritionist-dieting-flaticons-flat-flat-icons.png" alt="nutritionist image" style="height: 2rem; width: 2rem; color:aliceblue;"><span class="ms-1 d-none d-sm-inline">Nutritionist</span> </a>
                         <ul class="collapse nav flex-column ms-5 text-white" id="submenu4" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="../records/nutritionist.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
+                                <a href="../../records/nutritionist.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                             </li>
                             <li>
                                 <a href="../nutritionist/nutritionist.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
@@ -104,7 +104,7 @@ $row_admin = mysqli_fetch_array ($res);
                         <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-physiotherapy-nursing-flaticons-lineal-color-flat-icons.png" alt="physiotheraphy image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Psychotherapist</span> </a>
                         <ul class="collapse nav flex-column ms-5 text-white" id="submenu5" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="../records/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
+                                <a href="../../records/physiotheraphy.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Profile</span></a>
                             </li>
                             <li>
                                 <a href="../counsellor/counsellor.php" class="nav-link px-0 text-white"><img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 1rem; width: 1rem; color:aliceblue;"> <span class="d-none d-sm-inline">Schedules</span></a>
@@ -117,16 +117,16 @@ $row_admin = mysqli_fetch_array ($res);
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
-                    <a href="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-toggle="dropdown">
                         <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="hugenerd" width="30" height="30" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname'] ?></span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
+                    <ul class="dropdown-menu">
                         <!-- <li><a class="dropdown-item" href="admin.php">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li> -->
-                        <li><a class="dropdown-item text-primary" href="../../signout/admin.php">Sign out</a></li>
+                        <li class="text-center"><a class="text-decoration-none text-dark" href="../../signout/admin.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>

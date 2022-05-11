@@ -13,37 +13,44 @@ $user_row = mysqli_fetch_array($user_query);
 $query = "SELECT * FROM `counsellor_schedule`";
 $resultAll = mysqli_query($con, $query);
 ?>
+<style>
+    ul > li.nav-item{
+        margin-bottom: 1rem;
+    }
+</style>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" style="position: fixed; z-index: 1;">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li>
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="z-index: 1; background-color: #212529;">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+                <div class="modal-header">
+                    <a href="" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline text-primary text-center">Counsellor</span>
+                    </a>
+                </div>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start pt-3" id="menu">
+                    <li class="nav-item">
                         <a href="../../Dashboard/counsellor-profile.php" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Profile</span> </a>
+                        <img src="https://img.icons8.com/office/80/000000/test-account.png" alt="profile image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Profile</span> </a>
                     </li>
                     <li class="nav-item">
                         <a href="counsellor.php" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi bi-clock"></i> <span class="ms-1 d-none d-sm-inline">Counsellor schedule</span>
+                        <img src="https://img.icons8.com/office/80/000000/overtime.png" alt="profile image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Schedule</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi bi-clipboard-plus"></i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
+                        <img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Appointments</span>
+                        </a>
                     </li>
                     <li>
                         <a href="../../signout/counsellor.php" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi bi-power"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
+                            <i class="fs-4 bi bi-power" style="color: aliceblue;"></i><span class="ms-1 d-none d-sm-inline">Logout</span> </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="col py-3" style="padding-left: 15rem;">
+        <div class="col py-3">
             <h4 class="mb-4 text-gray-800">Counsellor Schedule</h4>
-        <!-- <span id="message"></span> -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
@@ -70,6 +77,13 @@ $resultAll = mysqli_query($con, $query);
                     
                         <div class="row">
                             <div class="col-lg-12">
+                                <div class="form-group p-3">
+                                    <label for="firstname">Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+                                        <input type="text" class="form-control" id="user-name" name="user-name" value="<?php echo $user_row["Firstname"] ?> <?php echo $user_row["Lastname"] ?>">
+                                    </div>
+                                </div>
                                 <div class="form-group p-3">
                                     <label for="firstname">Schedule Date</label>
                                     <div class="input-group">

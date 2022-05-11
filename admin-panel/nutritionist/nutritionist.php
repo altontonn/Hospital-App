@@ -4,7 +4,7 @@ readfile("../../index.html");
 include('insert.php');
 session_start();
 if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
-    header("Location:../Auth/admin-login.php");
+    header("Location:../../Auth/admin-login.php");
     die();
 }
 // Selecting the admin logged in user
@@ -117,28 +117,28 @@ $row_admin = mysqli_fetch_array ($res);
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
-                    <a href="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-toggle="dropdown">
                         <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="hugenerd" width="30" height="30" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname'] ?></span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark">
+                    <ul class="dropdown-menu bg-light">
                         <!-- <li><a class="dropdown-item" href="admin.php">Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li> -->
-                        <li><a class="dropdown-item text-primary" href="../../signout/admin.php">Sign out</a></li>
+                        <li class="text-center"><a class="text-decoration-none text-dark" href="../../signout/admin.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col py-3">
-            <h4 class="mb-4 text-gray-800">Counsellor Schedule</h4>
+            <h4 class="mb-4 text-gray-800">Nutritionist Schedule</h4>
         <!-- <span id="message"></span> -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="row">
                         <div class="col">
-                            <h6 class="m-0 font-weight-bold text-primary">Counsellor Schedule List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Nutritionist Schedule List</h6>
                         </div>
                         <div class="col" align="right">
                             <button type="button" name="add_exam" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success btn-circle btn-sm"><i class="fas fa-plus"></i></button>

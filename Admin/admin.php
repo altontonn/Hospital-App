@@ -99,7 +99,7 @@
     </ul>
     <hr>
     <div class="dropdown pb-4">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://lh3.googleusercontent.com/p/AF1QipMHO5l8JMT1a4CU7_K-7f_CP3gC1LIQ05NBpD1u=w768-h768-n-o-v1" alt="go care" width="30" height="30" class="rounded-circle">
             <span class="d-none d-sm-inline mx-1"><?php echo $row_admin['Firstname'] ?></span>
         </a>

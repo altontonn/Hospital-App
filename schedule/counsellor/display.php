@@ -9,7 +9,7 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
 $query = "SELECT * FROM `counsellor_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
-    $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
+    $table = '<table class="table table-bordered" id="doctor_schedule_table">
                 <thead>
                     <tr>
                         <th>Name</th>

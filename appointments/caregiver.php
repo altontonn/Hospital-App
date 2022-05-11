@@ -53,7 +53,9 @@ $result = mysqli_query($con, $query);
                                         </tr>
                                     </thead>
                                     <?php
+                                    $count = 0;
                                     while($row = mysqli_fetch_array($result)){
+                                        $count++;
                                     ?>
                                     <tbody>
                                     <tr>
@@ -61,8 +63,8 @@ $result = mysqli_query($con, $query);
                                         <td><?php echo $row["caregiver_schedule_date"] ?></td>
                                         <td><?php echo $row["caregiver_schedule_day"] ?></td>
                                         <td><?php echo $row["caregiver_schedule_start_time"]?> - <?php echo $row["caregiver_schedule_end_time"] ?></td>
-                                        <td><a class="btn btn-primary text-white" href="?edit=">Book Appointment</a></td>
-                                        </tr>
+                                        <td><button type="button" class="btn btn-primary text-white email-button" name="email-button" id="<?php echo $count ?>" data-user="<?php echo $row["Userid"] ?>" data-date="<?php echo $row["caregiver_schedule_date"] ?>" data-day="<?php echo $row["caregiver_schedule_day"] ?>" data-start="<?php echo $row["caregiver_schedule_start_time"] ?>" data-end="<?php echo $row["caregiver_schedule_end_time"] ?>">Book Appointment</button></td>
+                                    </tr>
                                     </tbody>
                                     <?php
                                     }
@@ -76,3 +78,42 @@ $result = mysqli_query($con, $query);
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('.email-button').click(function(){
+            $(this).attr('disabled', true);
+            let id = $(this).attr('id');
+            //console.log(id);
+            let email_data = [];
+            email_data.push({
+                user: $(this).data("user"),
+                date: $(this).data("date"),
+                day: $(this).data("day"),
+                start: $(this).data("start"),
+                end: $(this).data("end")
+            })
+            $.ajax({
+                url: "../book.php",
+                method: "POST",
+                data:{
+                    email_data: email_data
+                },
+                beforeSend: function(){
+                    $("#"+id).html("Booking...");
+                    $("#"+id).addClass("btn-danger"); 
+                },
+                success: function(data){
+                    if(data == 'ok'){
+                        $("#"+id).html("Booked");
+                        $("#"+id).removeClass("btn-danger");
+                        $("#"+id).removeClass("btn-info");
+                        $("#"+id).addClass("btn-success");
+                    }else{
+                        $("#"+id).text(data);
+                    }
+                    $("#"+id).attr('disabled', true);
+                }
+            })
+        });
+    });
+</script>
