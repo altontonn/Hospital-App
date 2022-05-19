@@ -9,9 +9,10 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
 $query = "SELECT * FROM `counsellor_schedule`";
 $resultAll = mysqli_query($con, $query);
 if(isset($_POST['displaySend'])){
-    $table = '<table class="table table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
-                <thead>
+    $table = '<table class="table table-striped table-bordered" id="doctor_schedule_table" width="100%" cellspacing="0">
+                <thead class="bg-primary text-white">
                     <tr>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Schedule Date</th>
                         <th>Schedule Day</th>
@@ -20,7 +21,8 @@ if(isset($_POST['displaySend'])){
                         <th>Consulting Time</th>
                         <th colspan="2" class="text-center">Action</th>
                     </tr>
-                </thead>';
+                </thead>
+                <tbody>';
                 while($row = mysqli_fetch_array($resultAll)){
                     $id = $row["id"];
                     $user = $row["user_id"];
@@ -29,8 +31,8 @@ if(isset($_POST['displaySend'])){
                     $start = $row["start_time"];
                     $end = $row["end_time"];
                     $consult = $row["average_consulting_time"];
-                $table .= '<tbody>
-                    <tr>
+                $table .= '<tr>
+                    <td>'.$id.'</td>
                     <td>'.$user.'</td>
                     <td>'.$date.'</td>
                     <td>'.$day.'</td>
@@ -39,9 +41,9 @@ if(isset($_POST['displaySend'])){
                     <td>'.$consult.'</td>
                     <td><a class="btn btn-primary text-white" href="edit.php?edit='.$id.'">Edit</a></td>
                     <td><a class="btn btn-danger text-white" onclick="deleteUser('.$id.')">Delete</a></td>
-                    </tr>
-                </tbody>';
+                    </tr>';
                 }
+                '</tbody>';
             $table.='</table>';
             echo $table;
 }

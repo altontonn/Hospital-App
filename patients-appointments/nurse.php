@@ -6,6 +6,10 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/patient-login.php");
     die();
 }
+$query1 = "SELECT * FROM `patient` WHERE `id`= '".$_SESSION["id"]."'";
+$result1 = mysqli_query($con, $query1);
+$row1 = mysqli_fetch_array ($result1);
+
 $query = "SELECT * FROM `nurse_schedule`";
 $result = mysqli_query($con, $query);
 ?>
@@ -43,7 +47,7 @@ $result = mysqli_query($con, $query);
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered" id="appointment_list_table">
-                                    <thead>
+                                    <thead class="bg-primary text-white">
                                         <tr>
                                             <th>Caregiver Name</th>
                                             <th>Appointment Date</th>
@@ -52,21 +56,23 @@ $result = mysqli_query($con, $query);
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <?php
-                                    while($row = mysqli_fetch_array($result)){
-                                    ?>
                                     <tbody>
+                                    <?php
+                                    $count = 0;
+                                    while($row = mysqli_fetch_array($result)){
+                                        $count++;
+                                    ?>
                                     <tr>
                                         <td><?php echo $row["user_id"] ?></td>
                                         <td><?php echo $row["schedule_date"] ?></td>
                                         <td><?php echo $row["schedule_day"] ?></td>
                                         <td><?php echo $row["start_time"]?> - <?php echo $row["end_time"] ?></td>
-                                        <td><a class="btn btn-primary text-white" href="?edit=">Book Appointment</a></td>
-                                        </tr>
-                                    </tbody>
-                                    <?php
+                                        <td><button type="button" class="btn btn-primary text-white email-button" name="email-button" id="<?php echo $count ?>" data-user="<?php echo $row1["Firstname"] ?> <?php echo $row1["Lastname"] ?>" data-nurse="<?php echo $row["user_id"] ?>" data-contact="<?php echo $row1["Phone"] ?>" data-date="<?php echo $row["schedule_date"] ?>" data-day="<?php echo $row["schedule_day"] ?>" data-start="<?php echo $row["start_time"] ?>" data-end="<?php echo $row["end_time"] ?>">Book Appointment</button></td>
+                                    </tr>
+                                        <?php
                                     }
                                     ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -76,3 +82,44 @@ $result = mysqli_query($con, $query);
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('.email-button').click(function(){
+            $(this).attr('disabled', true);
+            let id = $(this).attr('id');
+            //console.log(id);
+            let email_data = [];
+            email_data.push({
+                user: $(this).data("user"),
+                nurse: $(this).data("nurse"),
+                contact: $(this).data("contact"),
+                date: $(this).data("date"),
+                day: $(this).data("day"),
+                start: $(this).data("start"),
+                end: $(this).data("end")
+            })
+            $.ajax({
+                url: "../book/nurse.php",
+                method: "POST",
+                data:{
+                    email_data: email_data
+                },
+                beforeSend: function(){
+                    $("#"+id).html("Booking...");
+                    $("#"+id).addClass("btn-danger"); 
+                },
+                success: function(data){
+                    if(data){
+                        $("#"+id).html("Booked");
+                        $("#"+id).removeClass("btn-danger");
+                        $("#"+id).removeClass("btn-info");
+                        $("#"+id).addClass("btn-success");
+                    }else{
+                        $("#"+id).text(data);
+                    }
+                    $("#"+id).attr('disabled', true);
+                }
+            })
+        });
+    });
+</script>

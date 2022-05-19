@@ -38,7 +38,7 @@ $resultAll = mysqli_query($con, $query);
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
+                        <a href="../../staff-appointments/counsellor.php" class="nav-link px-0 align-middle">
                         <img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 2rem; width: 2rem; color:aliceblue;"> <span class="ms-1 d-none d-sm-inline">Appointments</span>
                         </a>
                     </li>

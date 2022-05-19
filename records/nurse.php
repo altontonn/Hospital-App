@@ -37,8 +37,8 @@ $row_admin = mysqli_fetch_array ($res);
                 ?>
             </div>
         <?php endif ?>
-            <table class="table table-bordered table-hover">
-                <thead class="bg-light">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="bg-primary text-white">
                     <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Fname</th>
@@ -51,11 +51,11 @@ $row_admin = mysqli_fetch_array ($res);
                     <th colspan="2" class="text-center">Action</th>
                     </tr>
                 </thead>
+                <tbody>
                 <?php
                 $i = 0;
                 while($row = mysqli_fetch_array($result)){
                 ?>
-                <tbody>
                     <tr>
                     <th><?php echo $row['id'] ?></th>
                     <td><?php echo $row['Firstname'] ?></td>
@@ -68,11 +68,11 @@ $row_admin = mysqli_fetch_array ($res);
                     <td><a class="btn btn-primary text-white" href="../edit/nurse.php?edit=<?php echo $row['id']?>">Edit</a></td>
                     <td><a class="btn btn-danger text-white" href="../delete/nurse.php?delete=<?php echo $row['id']?>">Delete</a></td>
                     </tr>
-                </tbody>
-                <?php 
-                $i++;
+                    <?php 
+                    $i++;
                 }
                 ?>
+                </tbody>
             </table>
             <?php 
             } else{

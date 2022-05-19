@@ -15,7 +15,7 @@ if(isset($_POST['update_data'])){
     $s_end = $_POST['end-time'];
     $s_time = $_POST['average-consulting-time'];
 
-    $query = "UPDATE `caregiver_schedule` SET `caregiver_schedule_date`='$s_date', `caregiver_schedule_day`='$s_day', `caregiver_schedule_start_time`='$s_start', `caregiver_schedule_end_time`='$s_end', `average_consulting_time`='$s_time' WHERE `id`='$id'";
+    $query = "UPDATE `caregiver_schedule` SET `date`='$s_date', `day`='$s_day', `start_time`='$s_start', `end_time`='$s_end', `consulting_time`='$s_time' WHERE `id`='$id'";
 
     $query_run = mysqli_query($con, $query);
 

@@ -20,8 +20,8 @@ $resultAll = mysqli_query($con, $query);
 </style>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="position: fixed; z-index: 1; background-color: #212529;">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 min-vh-100" style="position: fixed; z-index: 1; background-color: #212529;">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2">
                 <div class="modal-header">
                     <a href="" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <span class="fs-5 d-none d-sm-inline text-primary text-center">Caregiver</span>
@@ -38,7 +38,7 @@ $resultAll = mysqli_query($con, $query);
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link px-0 align-middle">
+                        <a href="../../staff-appointments/caregiver.php" class="nav-link px-0 align-middle">
                         <img src="https://img.icons8.com/office/80/000000/new-job.png" alt="profile image" style="height: 2rem; width: 2rem; color:aliceblue;"> </i><span class="ms-1 d-none d-sm-inline">Appointments</span></a>
                     </li>
                     <li class="nav-item">
@@ -151,7 +151,7 @@ $(document).ready(function(){
     function displayData(){
         let displayData = "true";
         $.ajax({
-            url: "displayCaregiver.php",
+            url: "display.php",
             type: "post",
             data:{
                 displaySend: displayData

@@ -6,7 +6,11 @@ if(empty($_SESSION['id']) || $_SESSION['id'] == ''){
     header("Location:../Auth/patient-login.php");
     die();
 }
-$query = "SELECT * FROM `caregiver_schedule`";
+$query1 = "SELECT * FROM `patient` WHERE `id`= '".$_SESSION["id"]."'";
+$result1 = mysqli_query($con, $query1);
+$row1 = mysqli_fetch_array ($result1);
+
+$query = "SELECT * FROM `nutritionist_schedule`";
 $result = mysqli_query($con, $query);
 ?>
 <style>
@@ -39,11 +43,11 @@ $result = mysqli_query($con, $query);
             </nav>
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-header"><h4>Caregiver Schedule List</h4></div>
+                    <div class="card-header"><h4>Nutritionist Schedule List</h4></div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered" id="appointment_list_table">
-                                    <thead>
+                                    <thead class="bg-primary text-white">
                                         <tr>
                                             <th>Caregiver Name</th>
                                             <th>Appointment Date</th>
@@ -52,23 +56,23 @@ $result = mysqli_query($con, $query);
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
                                     <?php
                                     $count = 0;
                                     while($row = mysqli_fetch_array($result)){
                                         $count++;
                                     ?>
-                                    <tbody>
                                     <tr>
-                                        <td><?php echo $row["Userid"] ?></td>
-                                        <td><?php echo $row["caregiver_schedule_date"] ?></td>
-                                        <td><?php echo $row["caregiver_schedule_day"] ?></td>
-                                        <td><?php echo $row["caregiver_schedule_start_time"]?> - <?php echo $row["caregiver_schedule_end_time"] ?></td>
-                                        <td><button type="button" class="btn btn-primary text-white email-button" name="email-button" id="<?php echo $count ?>" data-user="<?php echo $row["Userid"] ?>" data-date="<?php echo $row["caregiver_schedule_date"] ?>" data-day="<?php echo $row["caregiver_schedule_day"] ?>" data-start="<?php echo $row["caregiver_schedule_start_time"] ?>" data-end="<?php echo $row["caregiver_schedule_end_time"] ?>">Book Appointment</button></td>
-                                    </tr>
-                                    </tbody>
-                                    <?php
+                                        <td><?php echo $row["user_id"] ?></td>
+                                        <td><?php echo $row["schedule_date"] ?></td>
+                                        <td><?php echo $row["schedule_day"] ?></td>
+                                        <td><?php echo $row["start_time"]?> - <?php echo $row["end_time"] ?></td>
+                                        <td><button type="button" class="btn btn-primary text-white email-button" name="email-button" id="<?php echo $count ?>" data-user="<?php echo $row1["Firstname"] ?> <?php echo $row1["Lastname"] ?>" data-nutritionist="<?php echo $row["user_id"] ?>" data-contact="<?php echo $row1["Phone"] ?>" data-date="<?php echo $row["schedule_date"] ?>" data-day="<?php echo $row["schedule_day"] ?>" data-start="<?php echo $row["start_time"] ?>" data-end="<?php echo $row["end_time"] ?>">Book Appointment</button></td>
+                                        </tr>
+                                        <?php
                                     }
                                     ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -79,21 +83,23 @@ $result = mysqli_query($con, $query);
     </div>
 </div>
 <script>
-    $(document).ready(function(){
-        $('.email-button').click(function(){
+   $(document).ready(function(){
+    $('.email-button').click(function(){
             $(this).attr('disabled', true);
             let id = $(this).attr('id');
             //console.log(id);
             let email_data = [];
             email_data.push({
                 user: $(this).data("user"),
+                nutritionist: $(this).data("nutritionist"),
+                contact: $(this).data("contact"),
                 date: $(this).data("date"),
                 day: $(this).data("day"),
                 start: $(this).data("start"),
                 end: $(this).data("end")
             })
             $.ajax({
-                url: "../book.php",
+                url: "../book/nutritionist.php",
                 method: "POST",
                 data:{
                     email_data: email_data
@@ -103,7 +109,7 @@ $result = mysqli_query($con, $query);
                     $("#"+id).addClass("btn-danger"); 
                 },
                 success: function(data){
-                    if(data == 'ok'){
+                    if(data){
                         $("#"+id).html("Booked");
                         $("#"+id).removeClass("btn-danger");
                         $("#"+id).removeClass("btn-info");
@@ -115,5 +121,5 @@ $result = mysqli_query($con, $query);
                 }
             })
         });
-    });
+   }) 
 </script>
