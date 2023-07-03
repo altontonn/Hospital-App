@@ -28,34 +28,14 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li>>PHP</li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li>XAMPP SERVER</li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li>SQL</li>
-  </ul>
-</details>
+- PHP
+- XAMPP
+- CSS
+- BOOTSTRAP
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **[Admins]** - can edit and delete records for hospital staff members and patients.
 - **[Staff Members]** - can create booking appointments
@@ -106,8 +86,6 @@ To run the project, execute the following command:
 
 ## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Author**
 
 - Github: [altontonn](https://github.com/altontonn/)
@@ -119,8 +97,6 @@ To run the project, execute the following command:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - **Work on booking appointment for patients**
 - **Work on Hospital root Landing page **
@@ -141,8 +117,6 @@ Feel free to check the [issues page](https://github.com/altontonn/Hospital-App/i
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
 Give a ⭐️ if you like this project and how I managed to build it!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,6 +125,6 @@ Give a ⭐️ if you like this project and how I managed to build it!
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/altontonn/Hospital-App/blob/master/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
