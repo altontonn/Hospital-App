@@ -9,6 +9,7 @@
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
   - [Setup](#setup)
   - [Usage](#usage)
   - [Deployment](#deployment)
@@ -22,7 +23,7 @@
 
 # 📖 [Hospital Booking App] <a name="about-project"></a>
 
-**[Hospital Booking App]** is a booking app for hospital staff members to create appointments for patients to book an appointemnt for a specific day. 
+**[Hospital Booking App]** is a booking app for hospital staff members to create appointments for patients to book an appointemnt for a specific day.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -63,21 +64,29 @@ In order to run this project you need:
 
 - PHP and Xampp installed
 
+### Installation
+
+- Clone or download the project repository.
+- Place the project files in the appropriate XAMPP web server directory (e.g., htdocs).
+- Launch XAMPP and start the Apache and MySQL services.
+
 ### Setup
 
-Clone this repository to your desired folder:
-
-```sh
-  cd my-folder
-  git clone https://github.com/altontonn/Hospital-App
-```
+- Open your web browser and navigate to http://localhost/phpmyadmin.
+- Log in to phpMyAdmin using your MySQL credentials.
+- Create a new database for your project.
+- Import the database schema and initial data from the provided SQL file (database.sql).
+- Update the database connection details in the PHP files if necessary (config.php, db.php, etc.).
 
 ### Usage
 
-To run the project, execute the following command:
+Use the `connect.php` file to establish a connection to the database. Example:
 
 ```sh
-  localhost:your-folder
+  <?php
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    $con = mysqli_connect('localhost', 'root', '', 'home_based_care');
+  ?>
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
