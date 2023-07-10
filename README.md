@@ -62,7 +62,9 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- PHP and Xampp installed
+- XAMPP (version X.X.X or higher) - [Download](https://www.apachefriends.org/index.html)
+- PHP (version X.X.X or higher) - [Download](https://www.php.net/downloads.php)
+- MySQL (version X.X.X or higher) - [Download](https://www.mysql.com/downloads/)
 
 ### Installation
 
