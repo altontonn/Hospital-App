@@ -111,7 +111,7 @@ Use the `connect.php` file to establish a connection to the database. Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Work on booking appointment for patients**
-- **Work on Hospital root Landing page **
+- **Work on Hospital root Landing page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
