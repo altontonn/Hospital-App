@@ -33,6 +33,7 @@
 - XAMPP
 - CSS
 - BOOTSTRAP
+- MYSQL
 
 <!-- Features -->
 
