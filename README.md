@@ -102,7 +102,7 @@ Use the `connect.php` file to establish a connection to the database. Example:
 
 - [Github](https://github.com/altontonn/)
 - [Twitter](https://twitter.com/AlumasaNewton)
-- Linkedin: [newton-alumasa](https://www.linkedin.com/in/newton-alumasa/)
+- [Linkedin](https://www.linkedin.com/in/newton-alumasa/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
