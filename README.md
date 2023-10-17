@@ -100,7 +100,7 @@ Use the `connect.php` file to establish a connection to the database. Example:
 
 👤 **Author**
 
-- Github: [altontonn](https://github.com/altontonn/)
+- [Github](https://github.com/altontonn/)
 - Twitter: [AlumasaNewton](https://twitter.com/AlumasaNewton)
 - Linkedin: [newton-alumasa](https://www.linkedin.com/in/newton-alumasa/)
 
