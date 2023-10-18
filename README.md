@@ -13,7 +13,7 @@
   - [Setup](#setup)
   - [Usage](#usage)
   - [Deployment](#deployment)
-- [👥 Authors](#authors)
+- [👥 Author](#author)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
